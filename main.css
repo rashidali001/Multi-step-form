@@ -97,7 +97,7 @@ nav{
     background-size: cover;
     background-position: bottom;
     padding: 30px 10px;
-    width: 350px;
+    width: 250px;
     height: auto;
     border-radius: 7px;
 }
@@ -124,8 +124,8 @@ div.step > a{
     color: #fff;
 }
 section.content{
-    padding: 20px;
-    min-width: 300px;
+    padding: 40px;
+    min-width: 450px;
     min-height: 400px;
     position: relative;
 }
