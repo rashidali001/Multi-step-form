@@ -1,5 +1,31 @@
 import react from 'react'
 
+
+/* PERSONAL INFO COMPONENT */
+
+const PersonalInfo = () =>{
+
+
+  return (
+    
+    <main className='w-full h-3/4 sm:w-3/4'>
+
+      {/* next step (desktop) */}
+      <div className='hidden justify-end px-6 sm:flex'>
+        <button className='nextStep text-xs text-slate-50'>Next Step</button>
+      </div>
+
+      {/* next step (mobile) */}
+      <div className='flex justify-end p-5 sm:hidden nextStepWrapper'>
+        <button className='nextStep text-xs text-slate-50'>Next Step</button>
+      </div>
+
+    </main>
+    
+  )
+
+}
+
 function App() {
 
   const handleActive = (pos) =>{
@@ -15,11 +41,11 @@ function App() {
 
   return (
 
-    <main className='w-full h-full sm:max-w-3xl sm:mx-auto sm:rounded-lg  sm:p-2 sm:flex bg-slate-50'>
+    <main className='w-full h-full flex flex-col sm:max-w-3xl sm:mx-auto sm:my-4 sm:rounded-lg  sm:p-2 sm:flex-row bg-slate-50'>
 
       {/* Navigation section */}
 
-          <nav className='w-full flex p-8  bg-no-repeat bg-cover justify-center gap-3 sm:w-1/4 sm:justify-start sm:flex-col sm:p-2 sm:pt-5 sm:gap-4 sm:rounded-lg' id="nav">
+          <nav className='w-full h-1/4  flex p-8  bg-no-repeat bg-cover justify-center gap-3 sm:w-1/4 sm:justify-start sm:flex-col sm:p-2 sm:pt-5 sm:gap-4 sm:rounded-lg' id="nav">
 
             {/* Navigation list item wrapper */}  
 
@@ -91,11 +117,15 @@ function App() {
 
             {/* Navigation list item wrapper */}  
 
-
           </nav>
 
 
       {/* End of naviagtion section */}
+
+
+      {/* FUNCTIONAL PART */} 
+      <PersonalInfo/>
+
 
 
 

@@ -24,13 +24,28 @@ body{
 
 }
 
+.nextStep{
+    background-color: hsl(213, 96%, 18%);
+    border-radius: 7px;
+    padding: 10px 15px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.nextStep:hover{
+    opacity: 0.8;
+}
+
+.nextStepWrapper{
+    background-color: hsl(206, 94%, 87%);
+}
+
 @media (min-width: 640px) {
     body{
         
         width: 100%;
-        height: 100vh;
+        height: 100%;
     }
     #nav{
-        height: 500px;
+        height: 400px;
     }
 }
