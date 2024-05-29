@@ -36,7 +36,63 @@ body{
 }
 
 .nextStepWrapper{
-    background-color: hsl(206, 94%, 87%);
+    background-color: #ccc;
+}
+
+.heading{
+    color: hsl(213, 96%, 18%);
+}
+.para{
+    color: hsl(231, 11%, 63%);
+}
+
+.error{
+    color: hsl(354, 84%, 57%);
+    display: none;
+}
+
+.planWrapper, .addonsWrapper{
+    border: 1px solid hsl(229, 24%, 87%);
+    border-radius: 7px;
+    padding: 15px 10px;
+    
+}
+.planWrapperActive{
+    border: 1px solid hsl(213, 96%, 18%) !important;
+}
+
+.planWrapper:hover{
+    cursor: pointer;
+    border: 1px solid hsl(213, 96%, 18%);
+
+}
+.planWrapper:hover .checkoutStyle{
+    border: 1px solid hsl(213, 96%, 18%);
+
+}
+.checkboxStyle{
+    border-radius: 7px;
+}
+.mode{
+    background-color: hsl(229, 24%, 87%);
+    padding: 5px;
+}
+
+#modeChange{
+    background-color: hsl(213, 96%, 18%);
+}
+
+.modeChangeyearly{
+    justify-content: flex-end;
+}
+
+.addOnsColor{
+    color: hsl(243, 100%, 62%);
+}
+
+
+#summaryInfo{
+    background-color: hsl(217, 100%, 97%);
 }
 
 @media (min-width: 640px) {
@@ -46,6 +102,6 @@ body{
         height: 100%;
     }
     #nav{
-        height: 400px;
+        height: auto;
     }
 }
