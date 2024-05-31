@@ -2,6 +2,7 @@ import react, { useEffect, useState } from 'react'
 import arcadeIcon from './assets/icon-arcade.svg'
 import advancedIcon from './assets/icon-advanced.svg'
 import proIcon from './assets/icon-pro.svg'
+import thankYou from './assets/icon-thank-you.svg'
 import checkmarkIcon from './assets/icon-checkmark.svg'
 import { AppContext } from './AppContext.jsx'
 
@@ -126,7 +127,7 @@ const PersonalInfo = () =>{
     
     <>
 
-      <div className='w-4/5 mx-auto my-5'>
+      <div className='w-4/5 h-auto mx-auto my-5'>
 
         {/* Heading section */}
         <div className='flex flex-col gap-2'>
@@ -326,7 +327,7 @@ const Plan = ()=>{
 
   return(
     <>
-    <div className='w-4/5 mx-auto my-5'>
+    <div className='w-4/5 h-auto mx-auto my-5'>
 
       {/* Heading section */}
       <div className='flex flex-col gap-2'>
@@ -515,7 +516,7 @@ const Plan = ()=>{
 
       return (
         <>
-    <div className='w-4/5 mx-auto my-5'>
+    <div className='w-4/5 h-auto mx-auto my-5'>
 
       {/* Heading section */}
       <div className='flex flex-col gap-2'>
@@ -624,21 +625,25 @@ const Plan = ()=>{
         // End of Main forEach loop
       }
 
+      const handleback = ()=>{
+        SetActiveComponent(3);
+      }
+
       const handleChange = ()=>{
         SetActiveComponent(2);
+      }
+
+      const handleConfirm = ()=>{
+        SetActiveComponent(5);
       }
 
       // const getPlanInfo = ()=>{
         
       // }
-
-      // debugging
-      let function_loop_count = 0;
-
       return(
         <>
 
-        <div className='w-4/5 mx-auto my-5'>
+        <div className='w-4/5 h-auto mx-auto my-5'>
 
           {/* Heading section */}
           <div className='flex flex-col gap-2'>
@@ -757,6 +762,36 @@ const Plan = ()=>{
           )}
 
 
+           {/* next step (desktop) */}
+
+
+           {plan_available == false?<></>:(
+            <div className='hidden justify-between sm:flex mx-auto my-10'>
+            <button className='text-slate-400' onClick={handleback}>Go Back</button>
+            <button className='nextStep text-xs text-slate-50' onClick={handleConfirm} >Confirm</button>
+          </div>    
+          )}
+
+
+            {/* next step (mobile) */}
+
+   
+          {plan_available == false?<></>:(
+            <div className='fixed w-full bottom-0 left-0'>
+              <div className='flex  w-full  justify-between p-5 sm:hidden nextStepWrapper'>
+             <button className='text-slate-400' onClick={handleback} >Go Back</button>
+             <button className='nextStep text-xs text-slate-50' onClick={handleConfirm}>Confirm</button>
+             </div>
+
+
+            </div>
+             
+
+      
+          )}
+     
+     
+
           
 
 
@@ -780,7 +815,18 @@ const Plan = ()=>{
   const FinalComponent = ()=>{
      
     return(
-      
+
+      <div className='w-4/5 h-auto mx-auto my-5 flex flex-col justify-center items-center gap-7'>
+        <div>
+          <img src={thankYou} alt="Thank you"/>
+        </div>
+
+        <h1>Thank you!</h1>
+
+        <p className='max-w-96 text-center'>Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@remixgaming.com </p>
+
+      </div>
+
     )
   }
 
@@ -829,11 +875,11 @@ const Plan = ()=>{
 
   return (
 
-    <main className='w-full h-full flex flex-col sm:max-w-3xl sm:mx-auto sm:my-4 sm:rounded-lg  sm:p-2 sm:flex-row bg-slate-50 sm:items-stretch'>
+    <main className='w-full h-screen flex flex-col sm:max-w-3xl sm:mx-auto sm:my-4 sm:rounded-lg sm:h-3/4  sm:p-2 sm:flex-row bg-slate-50 sm:items-stretch'>
 
       {/* Navigation section */}
 
-          <nav className='w-full h-1/4  flex p-8  bg-no-repeat bg-cover justify-center gap-3 sm:w-1/4 sm:h-full sm:justify-start sm:flex-col sm:p-2 sm:pt-5 sm:gap-4 sm:rounded-lg' id="nav">
+          <nav className='w-full h-28  flex p-8  bg-no-repeat bg-cover justify-center gap-3 sm:w-1/4 sm:h-full sm:justify-start sm:flex-col sm:p-2 sm:pt-5 sm:gap-4 sm:rounded-lg' id="nav">
 
             {/* Navigation list item wrapper */}  
 
@@ -914,7 +960,7 @@ const Plan = ()=>{
       {/* FUNCTIONAL PART */} 
     
 
-      <section className='w-full h-auto sm:w-3/4 sm:h-auto'>
+      <section className='w-full h-full sm:w-3/4 sm:h-auto'>
         {functionalComponents.map((componentWrapper) => {
           if (componentWrapper.componentNumber === activeComponent) {
             return componentWrapper.component; // Return the component
